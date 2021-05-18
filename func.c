@@ -1,4 +1,4 @@
-/* #include "func.h"
+#include "func.h"
 
 VetorEsparso *VE_Criar(int n, int m, int valor)
 {
@@ -68,4 +68,3 @@ VetorEsparso* ME_ObterLinha(MatrizEsparsa* M, int lin){
 void ME_MultiplicaEscalar(MatrizEsparsa* M, double alpha){
     
 }
- */
