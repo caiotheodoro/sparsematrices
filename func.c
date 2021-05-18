@@ -1,13 +1,12 @@
-#include "func.h"
+/* #include "func.h"
 
 VetorEsparso *VE_Criar(int n, int m, int valor)
 {
     VetorEsparso *novo = (VetorEsparso *)malloc(sizeof(VetorEsparso));
-    novo->linha = n;
+
     novo->coluna = m;
-    novo->valor = valor;
-    novo->direita = novo;
-    novo->esquerda = novo;
+
+
     return novo;
 }
 
@@ -69,3 +68,4 @@ VetorEsparso* ME_ObterLinha(MatrizEsparsa* M, int lin){
 void ME_MultiplicaEscalar(MatrizEsparsa* M, double alpha){
     
 }
+ */
