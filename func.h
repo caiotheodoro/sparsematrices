@@ -1,5 +1,5 @@
 #include <vetor.h>
-
+#include "vetor.h"
 
 
 typedef struct MatrizEsparsa{

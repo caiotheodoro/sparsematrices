@@ -1,4 +1,5 @@
-#include <vetor.h>>
+#include "vetor.h"
+#include "hash.h"
 
 
 VetorEsparso *VE_Criar( int m){
@@ -37,19 +38,41 @@ double VE_Buscar(VetorEsparso* v, int col){
 
 double VE_ProdutoEscalar(VetorEsparso* v, VetorEsparso* u){
 
+    double res = 0;
+    for (int i = 0; i < n; i++){
+        res += v->tabela[i]->tabela->chave* u->tabela[i]->tabela->chave;
+    }
+
+    return res;
 
 }
 
 
 void VE_MultiplicaEscalar(VetorEsparso* v, double alpha){
 
+    for(int i=0;i<v->coluna;i++){
+      v->tabela[i]->tabela->valor *= alpha;
+      v->tabela[i]->tabela->chave *= alpha;   
+    }
 
 }
 
 
 VetorEsparso* VE_MultiplicaVetor(VetorEsparso* v, VetorEsparso* u){
 
+  if(v->colunas != u->colunas) return -1;
 
+  VetorEsparso *novo = (VetorEsparso *)malloc(sizeof(VetorEsparso));
+    novo->tabela = THEA_Criar(v->coluna);
+    novo->coluna = v->coluna;
+ 
+    for(int i=0; o< v->coluna;i++){
+
+    novo->tabela[i]->tabela->valor = v->tabela[i]->tabela->valor * u->tabela[i]->tabela->valor;
+
+    }
+
+  return novo;
 }
 
 VetorEsparso* VE_SomaVetor(VetorEsparso* v, VetorEsparso* u){ //soma por coluna

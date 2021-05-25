@@ -48,7 +48,7 @@ void ME_Atribuir(MatrizEsparsa* M, int n, int m, double valor){
 
 double ME_Buscar(MatrizEsparsa *M, int n, int m)
 {
-    VetorEsparso *v;
+    VetorEsparso *v;  
     v = M->linhasVetor[n];
     return VE_Buscar(v, m);
 }
@@ -66,5 +66,11 @@ VetorEsparso* ME_ObterLinha(MatrizEsparsa* M, int lin){
 }
 
 void ME_MultiplicaEscalar(MatrizEsparsa* M, double alpha){
-    
+
+    for (int i = 0; i < M->linhas; i++)
+    {
+        VE_MultiplicaEscalar(M->linhasVetor[i],alpha);
+    }
+
+
 }
