@@ -98,7 +98,7 @@ VetorEsparso* VE_MultiplicaVetor(VetorEsparso* v, VetorEsparso* u){
 
 VetorEsparso* VE_SomaVetor(VetorEsparso* v, VetorEsparso* u){ 
   VetorEsparso *novo = (VetorEsparso *)malloc(sizeof(VetorEsparso));
-  int i, aux = 0;
+  int i;
 
   if( v->coluna != u->coluna){
     printf("Error! O número de colunas dos vetores devem ser iguais para a execução.");
