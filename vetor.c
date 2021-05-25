@@ -87,22 +87,37 @@ VetorEsparso* VE_MultiplicaVetor(VetorEsparso* v, VetorEsparso* u){
     novo->tabela = THEA_Criar(v->coluna);
     novo->coluna = v->coluna;
  
-    for(int i=0; o< v->coluna;i++){
+<<<<<<< HEAD
+    for(int i=0; i< v->coluna;i++){
+=======
+    for(int i=0; i < v->coluna;i++){
+>>>>>>> f67900c17c2dcea45c8e499c25c5f666618c575b
 
-    novo->tabela[i]->tabela->valor = v->tabela[i]->tabela->valor * u->tabela[i]->tabela->valor;
+      novo->tabela[i]->tabela->valor = v->tabela[i]->tabela->valor * u->tabela[i]->tabela->valor;
 
     }
 
-  return novo;
+  return novo->tabela[i]->tabela->valor;
 }
 
-VetorEsparso* VE_SomaVetor(VetorEsparso* v, VetorEsparso* u){ //soma por coluna
+VetorEsparso* VE_SomaVetor(VetorEsparso* v, VetorEsparso* u){ 
+  VetorEsparso *novo = (VetorEsparso *)malloc(sizeof(VetorEsparso));
+  int i;
+
   if( v->coluna != u->coluna){
     printf("Error! O número de colunas dos vetores devem ser iguais para a execução.");
     return 0;
-  }else {
-      // falta terminar 
   }
+    novo->tabela = THEA_Criar(v->coluna);
+    novo->coluna = v->coluna;
+ 
+    for( i=0; i< v->coluna;i++){
+
+      novo->tabela[i]->tabela->valor = v->tabela[i]->tabela->valor + u->tabela[i]->tabela->valor;
+
+    }
+
+  return novo->tabela[i]->tabela->valor;
 }
 
 void VE_Destruir(VetorEsparso* v){

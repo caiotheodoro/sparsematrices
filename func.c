@@ -74,3 +74,39 @@ void ME_MultiplicaEscalar(MatrizEsparsa* M, double alpha){
 
 
 }
+
+MatrizEsparsa* ME_Carregar(MatrizEsparsa* M,char* nome_do_arquivo){
+
+ FILE *arquivo;
+    char palavra[100];
+    char *linha;
+    unsigned int i = 0;
+    int valores[3];
+    int lin, col, val;
+    int flag, counter;
+
+    arquivo = fopen(nome_do_arquivo, "r");
+    if (arquivo == NULL)
+    {
+        printf("arquivo vazio");
+    }
+    for(int i=0;i<3;i++){
+        linha = fgets(palavra, 100, arquivo);
+        valores[i] = (int)linha;
+    }
+
+    while (!feof(arquivo))
+    {
+        linha = fgets(palavra, 100, arquivo);
+        if (linha)
+        {
+            linha[0] = lin;
+            linha[2] = col;           
+            linha[4] = val;
+            ME_Atribuir(M, lin,col,val);
+            
+        }
+    }
+    fclose(arquivo);
+
+}
