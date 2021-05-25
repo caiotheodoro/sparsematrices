@@ -87,11 +87,9 @@ VetorEsparso* VE_MultiplicaVetor(VetorEsparso* v, VetorEsparso* u){
     novo->tabela = THEA_Criar(v->coluna);
     novo->coluna = v->coluna;
  
-<<<<<<< HEAD
+
     for(int i=0; i< v->coluna;i++){
-=======
-    for(int i=0; i < v->coluna;i++){
->>>>>>> f67900c17c2dcea45c8e499c25c5f666618c575b
+
 
       novo->tabela[i]->tabela->valor = v->tabela[i]->tabela->valor * u->tabela[i]->tabela->valor;
 
