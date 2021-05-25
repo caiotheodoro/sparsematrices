@@ -1,5 +1,6 @@
-#include <vetor.h>>
-#define tamHash 2
+#include "vetor.h"
+#include "hash.h"
+#include "func.h"
 
 VetorEsparso *VE_Criar( int m){
   int *v;
@@ -55,15 +56,23 @@ double VE_ProdutoEscalar(VetorEsparso* v, VetorEsparso* u){
         printf("Error! Para que a operacao seja possivel o numero de coluna dos vetores devem ser iguais.");
         return 0;
     }
-    if(VE_NNaoZeros(v) <= VE_NNaoZeros(u)){
-        for(){} //falta terminar
+
+    double res = 0;
+    for (int i = 0; i < n; i++){
+        res += v->tabela[i]->tabela->chave* u->tabela[i]->tabela->chave;
     }
+
+    return res;
 
 }
 
 
 void VE_MultiplicaEscalar(VetorEsparso* v, double alpha){
 
+    for(int i=0;i<v->coluna;i++){
+      v->tabela[i]->tabela->valor *= alpha;
+      v->tabela[i]->tabela->chave *= alpha;   
+    }
 
 }
 
@@ -73,8 +82,18 @@ VetorEsparso* VE_MultiplicaVetor(VetorEsparso* v, VetorEsparso* u){
         printf("Error! O número de colunas dos vetores devem ser iguais para a execução.");
         return 0;
     }
-    //falta terminar
 
+  VetorEsparso *novo = (VetorEsparso *)malloc(sizeof(VetorEsparso));
+    novo->tabela = THEA_Criar(v->coluna);
+    novo->coluna = v->coluna;
+ 
+    for(int i=0; o< v->coluna;i++){
+
+    novo->tabela[i]->tabela->valor = v->tabela[i]->tabela->valor * u->tabela[i]->tabela->valor;
+
+    }
+
+  return novo;
 }
 
 VetorEsparso* VE_SomaVetor(VetorEsparso* v, VetorEsparso* u){ //soma por coluna

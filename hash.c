@@ -1,4 +1,4 @@
-#include <hash.h>
+#include "hash.h"
 
 static void  THEA_Redimensionar(THEA* TH, int m_novo){
     ELEM  *nova, *antiga; // ponteiro para a nova tabela e uma para a tabela velha

@@ -1,4 +1,4 @@
-#include <hash.h>
+#include "hash.h"
 
 typedef struct VetorEsparso{
   int coluna;

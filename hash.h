@@ -1,4 +1,6 @@
-#include <vetor.h>
+
+#include "vetor.h"
+#include "func.h"
 #define tamHash 5
 
 
